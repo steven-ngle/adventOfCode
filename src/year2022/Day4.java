@@ -37,8 +37,6 @@ public class Day4 {
         return fullyContained;
     }
 
-    // tbd
-
     public static int part2(String path) throws IOException {
 
         int overlap = 0;
@@ -46,7 +44,18 @@ public class Day4 {
         String line;
 
         while ((line = bReader.readLine()) != null) {
+            String[] ranges = line.split(",");
+            String[] range1 = ranges[0].split("-");
+            String[] range2 = ranges[1].split("-");
 
+            int start1 = Integer.parseInt(range1[0]);
+            int end1 = Integer.parseInt(range1[1]);
+            int start2 = Integer.parseInt(range2[0]);
+            int end2 = Integer.parseInt(range2[1]);
+
+            if ((start1 <= end2) && (start2 <= end1)) {
+                overlap++;
+            }
         }
 
         return overlap;
