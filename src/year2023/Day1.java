@@ -50,8 +50,6 @@ public class Day1 {
         String line;
 
         while ((line = bReader.readLine()) != null) {
-            int first = 0;
-            int last = 0;
             ArrayList<Integer> arrayList = new ArrayList<>();
 
             String newline = line.replace("one", "o1e")
@@ -67,14 +65,14 @@ public class Day1 {
 
             char[] chars = newline.toCharArray();
 
-            for (int i = 0; i < chars.length; i++) {
-                if (Character.isDigit(chars[i])) {
-                    arrayList.add(Character.getNumericValue(chars[i]));
+            for (char c : chars) {
+                if (Character.isDigit(c)) {
+                    arrayList.add(Character.getNumericValue(c));
                 }
             }
 
-            first = arrayList.get(0);
-            last = arrayList.get(arrayList.size() - 1);
+            int first = arrayList.get(0);
+            int last = arrayList.get(arrayList.size() - 1);
             sum += first * 10 + last;
         }
 
