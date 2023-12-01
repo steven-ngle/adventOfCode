@@ -9,20 +9,25 @@ import java.util.Collections;
 
 public class Day1 {
 
+    private static ArrayList<Integer> list = new ArrayList<>();
+
     public static void main(String[] args) throws FileNotFoundException {
+
+        System.out.println(part1("resources\\year2022\\day1.txt"));
+        System.out.println(part2("resources\\year2022\\day1.txt"));
+    }
+
+    public static int part1(String path) throws FileNotFoundException {
 
         BufferedReader bReader;
         bReader = new BufferedReader(new FileReader("resources\\year2022\\day1.txt"));
         String stringLine;
         int sum = 0;
 
-        ArrayList<Integer> list = new ArrayList<Integer>();
-
-
         try {
             while ((stringLine = bReader.readLine()) != null) {
 
-                if (stringLine.matches("[0-9]+")){
+                if (stringLine.matches("[0-9]+")) {
                     sum += Integer.parseInt(stringLine);
                 } else {
                     list.add(sum);
@@ -35,9 +40,15 @@ public class Day1 {
             e.printStackTrace();
         }
 
-        System.out.println(Collections.max(list));
+        return Collections.max(list);
+    }
 
-        // part two
+    public static int part2(String path) throws FileNotFoundException {
+
+        BufferedReader bReader;
+        bReader = new BufferedReader(new FileReader("resources\\year2022\\day1.txt"));
+        String stringLine;
+        int sum = 0;
 
         ArrayList<Integer> list2 = new ArrayList<Integer>();
 
@@ -46,10 +57,10 @@ public class Day1 {
             list.remove(Collections.max(list));
         }
 
-        int sum2 = 0;
-        for (int i = 0; i < list2.size(); i++) {
-            sum2 += list2.get(i);
+        for (int i : list2) {
+            sum += i;
         }
-        System.out.println(sum2);
+
+        return sum;
     }
 }

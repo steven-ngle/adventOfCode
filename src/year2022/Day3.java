@@ -17,9 +17,9 @@ public class Day3 {
         String stringLine;
         String firstCompartment = "";
         String secondCompartment = "";
-        String rucksack1 = "";
-        String rucksack2 = "";
-        String rucksack3 = "";
+        String backpack1 = "";
+        String backpack2 = "";
+        String backpack3 = "";
         int sum = 0;
         int sum2 = 0;
         ArrayList<String> firstCompartmentList = new ArrayList<String>();
@@ -40,9 +40,6 @@ public class Day3 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        //System.out.println(firstCompartmentList);
-        //System.out.println(secondCompartmentList);
 
         for (int i = 0; i < firstCompartmentList.size(); i++) {
             firstCompartment = firstCompartmentList.get(i);
@@ -74,7 +71,6 @@ public class Day3 {
 
         // part two
 
-        //System.out.println(list);
         boolean check = true;
 
         while (check) {
@@ -90,21 +86,21 @@ public class Day3 {
         }
 
         for (int i = 0; i < rucksackList1.size(); i++) {
-            rucksack1 = rucksackList1.get(i);
-            rucksack2 = rucksackList2.get(i);
-            rucksack3 = rucksackList3.get(i);
+            backpack1 = rucksackList1.get(i);
+            backpack2 = rucksackList2.get(i);
+            backpack3 = rucksackList3.get(i);
 
             Set<Character> setRucksack1 = new HashSet<Character>();
             Set<Character> setRucksack2 = new HashSet<Character>();
             Set<Character> setRucksack3 = new HashSet<Character>();
 
-            for (char c : rucksack1.toCharArray()) {
+            for (char c : backpack1.toCharArray()) {
                 setRucksack1.add(c);
             }
-            for (char c : rucksack2.toCharArray()) {
+            for (char c : backpack2.toCharArray()) {
                 setRucksack2.add(c);
             }
-            for (char c : rucksack3.toCharArray()) {
+            for (char c : backpack3.toCharArray()) {
                 setRucksack3.add(c);
             }
 

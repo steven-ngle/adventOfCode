@@ -9,31 +9,31 @@ import java.util.Collections;
 
 public class Day2 {
 
+    // A und X = Rock
+    // B und Y = Paper
+    // C und Z = Scissors
+
+    // Rock = +1
+    // Paper = +2
+    // Scissors = +3
+
+    // Win = +6
+    // Draw = +3
+    // Lose = +0
+
+    // A X = +4
+    // A Y = +8
+    // A Z = +3
+
+    // B Y = +5
+    // B X = +1
+    // B Z = +9
+
+    // C Z = +6
+    // C X = +7
+    // C Y = +2
+
     public static void main(String[] args) throws FileNotFoundException {
-
-// A und X = Rock
-// B und Y = Paper
-// C und Z = Scissors
-
-// Rock = +1
-// Paper = +2
-// Scissors = +3
-
-// Win = +6
-// Draw = +3
-// Lose = +0
-
-// A X = +4
-// A Y = +8
-// A Z = +3
-
-// B Y = +5
-// B X = +1
-// B Z = +9
-
-// C Z = +6
-// C X = +7
-// C Y = +2
 
         BufferedReader bReader;
         bReader = new BufferedReader(new FileReader("resources\\year2022\\day2.txt"));
