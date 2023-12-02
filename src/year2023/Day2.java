@@ -65,8 +65,6 @@ public class Day2 {
             int minGreen = 0;
 
             String[] parts = line.split(": ");
-            int id = Integer.parseInt(parts[0].replaceAll("\\D+", ""));
-
             String[] colorParts = parts[1].split("; ");
 
             for (String s : colorParts) {
