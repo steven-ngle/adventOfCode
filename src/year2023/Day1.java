@@ -45,7 +45,6 @@ public class Day1 {
     public static int part2(String path) throws IOException {
 
         int sum = 0;
-
         BufferedReader bReader = new BufferedReader(new FileReader(path));
         String line;
 
