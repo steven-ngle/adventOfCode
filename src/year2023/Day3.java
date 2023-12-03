@@ -68,50 +68,8 @@ public class Day3 {
         return sum;
     }
 
-
-    // part 2 doesn't work (yet)
+    
     public static int part2(String path) throws IOException {
-        int sum = 0;
-        BufferedReader bReader = new BufferedReader(new FileReader(path));
-        String line;
-        ArrayList<String> engine = new ArrayList<>();
-
-        while ((line = bReader.readLine()) != null) {
-            engine.add(line);
-        }
-
-        ArrayList<Point> starIndexes = new ArrayList<>();
-        for (int i = 0; i < engine.size(); i++) {
-            for (int j = 0; j < engine.get(i).length(); j++) {
-                char c = engine.get(i).charAt(j);
-                if (c == '*') {
-                    starIndexes.add(new Point(i, j));
-                }
-            }
-        }
-
-        for (Point p : starIndexes) {
-            ArrayList<Integer> numbers = new ArrayList<>();
-            int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
-            for (int[] direction : directions) {
-                int x = p.x + direction[0];
-                int y = p.y + direction[1];
-                if (x >= 0 && x < engine.size() && y >= 0 && y < engine.get(x).length() && Character.isDigit(engine.get(x).charAt(y))) {
-                    int number = 0;
-                    for (int j = y; j < engine.get(x).length() && Character.isDigit(engine.get(x).charAt(j)); j++) {
-                        number = number * 10 + Character.getNumericValue(engine.get(x).charAt(j));
-                        y = j;
-                    }
-                    numbers.add(number);
-                    if (numbers.size() == 2) {
-                        break;
-                    }
-                }
-            }
-            if (numbers.size() == 2) {
-                sum += numbers.get(0) * numbers.get(1);
-            }
-        }
 
         return sum;
     }
