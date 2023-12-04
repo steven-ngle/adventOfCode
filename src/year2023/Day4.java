@@ -62,9 +62,9 @@ public class Day4 {
         int sum = 0;
 
         while ((line = bReader.readLine()) != null) {
-            String[] cards = line.split("\\|");
-            String[] current = cards[0].split(":");
-            String[] numberParts = current[0].split("\\s+");
+            String[] parts = line.split("\\|");
+            String[] split = parts[0].split(":");
+            String[] numberParts = split[0].split("\\s+");
 
             int cardNumber = 0;
             for (String s : numberParts) {
@@ -73,21 +73,21 @@ public class Day4 {
                 }
             }
 
-            String[] currentCards = current[1].split("\\s+");
-            String[] winningCards = cards[1].split("\\s+");
+            String[] currentCards = split[1].split("\\s+");
+            String[] winningCards = parts[1].split("\\s+");
 
-            int matchCounter = 0;
+            int counter = 0;
 
             for (int i = 1; i < currentCards.length; i++) {
                 for (int k = 1; k < winningCards.length; k++) {
                     if (currentCards[i].equals(winningCards[k])) {
-                        matchCounter++;
+                        counter++;
                     }
                 }
             }
 
             for (int i = 1; i <= numbers.get(cardNumber); i++) {
-                for (int j = cardNumber + 1; j < cardNumber + matchCounter + 1; j++) {
+                for (int j = cardNumber + 1; j < cardNumber + counter + 1; j++) {
                     numbers.put(j, numbers.get(j) + 1);
                 }
             }
