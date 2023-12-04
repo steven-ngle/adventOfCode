@@ -71,6 +71,6 @@ public class Day3 {
     
     public static int part2(String path) throws IOException {
 
-        return sum;
+        return 0;
     }
 }
