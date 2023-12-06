@@ -43,13 +43,13 @@ public class Day6 {
         long time = Long.parseLong(lineTimes);
         long record = Long.parseLong(lineDistances);
 
-        int ways = 0;
+        int result = 0;
         for (long i = 14; i <= time - 14; i++) {
             long distance = i * (time - i);
             if (distance > record) {
-                ways++;
+                result++;
             }
         }
-        return ways;
+        return result;
     }
 }
