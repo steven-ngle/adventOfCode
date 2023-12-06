@@ -68,9 +68,9 @@ public class Day3 {
         return sum;
     }
 
-    
     public static int part2(String path) throws IOException {
+        int sum = 0;
 
-        return 0;
+        return sum;
     }
 }
